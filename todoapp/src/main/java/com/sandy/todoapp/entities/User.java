@@ -1,14 +1,10 @@
 package com.sandy.todoapp.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import com.sandy.todoapp.enums.Subscriptions;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @AllArgsConstructor
@@ -45,5 +41,7 @@ public class User {
     @Lob
     private byte[] profileImage;
     private String imageType;
+    @Enumerated(EnumType.STRING)
+    private Subscriptions subscriptions = Subscriptions.FREE;
 
 }
